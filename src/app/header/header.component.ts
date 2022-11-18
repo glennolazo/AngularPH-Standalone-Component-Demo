@@ -1,6 +1,10 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { MaterialImportModule } from '../shared/material-import.module';
 
 @Component({
+  standalone: true,
+  imports: [MaterialImportModule, RouterModule],
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
