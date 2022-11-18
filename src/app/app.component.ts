@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angularph-demo-app';
+  subHeaderName = 'Home';
+
+  constructor() {}
+
+  onSubHeaderNameChanged(subHeaderName: string) {
+    this.subHeaderName = subHeaderName;
+  }
+ 
 }

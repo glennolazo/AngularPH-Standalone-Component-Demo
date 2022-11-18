@@ -1,0 +1,9 @@
+<div class="todo-detail-header">
+    <h1>My Todo Details:</h1>
+    <button mat-flat-button color="primary" (click)="back()">Back</button>
+</div>
+<hr />
+<ng-container *ngIf="(todo$ | async) as todo">
+    <h3>Name: <span>{{ todo.name }}</span></h3>
+    <h3>Status: <span>{{ todo.statusCode | statusCodeMapper }}</span></h3>
+</ng-container>

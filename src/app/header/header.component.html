@@ -1,0 +1,33 @@
+<header>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row class="mat-elevation-z6">
+      <img
+        src="https://material.angular.io/assets/img/homepage/angular-white-transparent.svg"
+        alt="Angular Logo"
+        height="40"
+        width="40"
+      />
+      <span style="margin-left: 10px">Angular PH</span>
+      <nav class="nav-container">
+        <a
+          routerLink="/home"
+          routerLinkActive="active"
+          mat-flat-button
+          color="primary"
+          (click)="onPageChange('home')"
+        >
+          Home
+        </a>
+        <a
+          routerLink="/todo"
+          routerLinkActive="active"
+          mat-flat-button
+          color="primary"
+          (click)="onPageChange('todo')"
+        >
+          Todos
+        </a>
+      </nav>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</header>

@@ -1,0 +1,36 @@
+<ng-container *ngIf="todos$ | async as todos">
+  <table mat-table [dataSource]="todos" class="mat-elevation-z8">
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+  
+    <!-- Status Column -->
+    <ng-container matColumnDef="statusCode">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td todoStatusHighlighter [statusCode]="element.statusCode" mat-cell *matCellDef="let element">{{ element.statusCode | statusCodeMapper }}</td>
+    </ng-container>
+  
+    <!-- Action Column -->
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef>Action</th>
+      <td mat-cell *matCellDef="let element">
+        <ng-container
+          *ngTemplateOutlet="actionTpl; context: { $implicit: element.todoId }"
+        ></ng-container>
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</ng-container>
+
+<!-- Action Column Template -->
+<ng-template #actionTpl let-position>
+  <button mat-icon-button color="primary" (click)="viewTodo(position)">
+    <mat-icon>visibility</mat-icon>
+  </button>
+</ng-template>

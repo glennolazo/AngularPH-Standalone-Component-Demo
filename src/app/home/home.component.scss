@@ -1,0 +1,27 @@
+:host {
+    height: 100%;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    
+        .heading {
+            &-1, &-2, &-3 {
+                font-size: 9rem;
+            }
+
+            &-1 {
+                color: black;
+            }
+            &-2 {
+                color: orangered;
+            }
+            &-3 {
+                color: blue;
+            }
+        }
+    }
+}
